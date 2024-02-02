@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Spotify.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Spotify"
+    xmlns:Pages="clr-namespace:Spotify.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Good morning"
+    
+    BackgroundColor="#1dda63">
+
+        <Shell.TabBarBackgroundColor>
+        <Color>#000000</Color>
+        </Shell.TabBarBackgroundColor>
+        <Shell.TabBarTitleColor>
+        <Color>#FFFFFF</Color>
+        </Shell.TabBarTitleColor>
+
+    <TabBar>
+        <Tab Title="Home" Icon="home.png"  >
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Search" Icon="search.png">
+            <ShellContent
+                Title="Search"
+                ContentTemplate="{DataTemplate local:SearchPage}"
+                Route="SearchPage" />
+        </Tab>
+
+        <Tab Title="Your Library" Icon="library.png">
+            
+            <ShellContent
+                
+                ContentTemplate="{DataTemplate Pages:LibraryPage}"
+
+                Route="LibraryPage" />
+        </Tab>
+
+    </TabBar>
+</Shell>
+   
+    

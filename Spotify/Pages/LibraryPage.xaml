@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spotify.Pages.LibraryPage"
+             Title="LibraryPage"
+             BackgroundColor="{StaticResource Gray950}" Shell.NavBarIsVisible="False">
+    <WebView  Source="https://open.spotify.com/playlist/37i9dQZF1E4zYpbMS0zGiN" Margin="0" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+</ContentPage>

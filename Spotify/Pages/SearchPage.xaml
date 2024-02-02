@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spotify.SearchPage"
+             Title="SearchPage"
+             BackgroundColor="{StaticResource Gray950}" Shell.NavBarIsVisible="False">
+
+    <StackLayout>
+        <Label
+            Text="Search"
+            TextColor="White"
+            FontAttributes="Bold"
+            FontSize="24"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Margin="20,20,0,0"/>
+
+        <Frame
+            BackgroundColor="White"
+            CornerRadius="10"
+            Margin="5"
+            Padding="-1">
+            <StackLayout>
+                <SearchBar
+                    x:Name="searchBar"
+                    Placeholder="What do you want to listen to?"
+                    SearchCommand="{Binding SearchCommand}"
+                    SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}" />
+            </StackLayout>
+        </Frame>
+
+       
+        <CollectionView
+           
+            ItemsSource="{Binding Genres}"
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Frame
+                            BackgroundColor="White"
+                            CornerRadius="10"
+                            Margin="5"
+                            Padding="5">
+                            <StackLayout>
+                                <Image Source="{Binding GenreImage}" Aspect="AspectFill" HeightRequest="80" />
+                                <Label Text="{Binding GenreName}" HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

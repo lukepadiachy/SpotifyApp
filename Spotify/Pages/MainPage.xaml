@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spotify.MainPage"
+             Title="Good Morning"
+             BackgroundColor="{StaticResource Gray950}"
+             >
+
+    <StackLayout Margin="20">
+        <Label Text="My Releases"
+               TextColor="White"
+               FontSize="15"
+               FontAttributes="Bold"
+               Margin="0,0,0,10" />
+        <CollectionView ItemsSource="{Binding Songs}"
+                        ItemsLayout="HorizontalGrid, 1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="60">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImageUrl}" 
+                               Aspect="AspectFill"
+                               HeightRequest="200" 
+                               WidthRequest="200" />
+                        <Label Grid.Column="0" 
+                               Grid.Row="1"
+                               Margin="-40,10,10,0"
+                               Text="{Binding Name}"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               LineBreakMode="TailTruncation" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        
+        <CollectionView ItemsSource="{Binding SecondRowSongs}"
+                        ItemsLayout="HorizontalGrid, 1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="60">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImageTwo}" 
+                               Aspect="AspectFill"
+                               HeightRequest="200" 
+                               WidthRequest="200" />
+                        <Label Grid.Column="0" 
+                               Grid.Row="1"
+                               Margin="-40,10,10,0"
+                               Text="{Binding NameTwo}"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               LineBreakMode="TailTruncation" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
